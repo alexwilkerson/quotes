@@ -41,6 +41,24 @@ body {
   background: #fff;
 }
 
+header {
+  margin: 0 auto;
+  width: 95%;
+  text-align: right;
+  line-height: 1.9em;
+  font-size: 2em;
+  padding: 0;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+#walking {
+   transition: color 0.8s;
+  -webkit-transition: color 0.8s;
+}
+
 .quote-card {
   cursor: pointer;
   width: 95%; 
@@ -51,7 +69,6 @@ body {
   text-align: center;
   position: relative;
   z-index: 1000;
-  top: 180px;
   transition: transform 0.8s, background 0.17s, left 0.8s ease-out;
   -webkit-transition: transform 0.8s, background 0.17s, left 0.8s ease-out;
   -webkit-transform-style: preserve-3d; /* fix for mobile flashing */
@@ -121,6 +138,10 @@ blockquote {
 
 @media (min-width: 399px) {
   .quote-card {
+    max-width: 400px;
+  }
+
+  header {
     max-width: 400px;
   }
 
