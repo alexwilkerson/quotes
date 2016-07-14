@@ -9,12 +9,13 @@ var randomQuote = function(event) {
         parentOfCard.removeChild(quoteCard);
         quoteCard = createNewCard();
         parentOfCard.appendChild(quoteCard);
-        quoteCard.style.webkitTransform = "translateX(100vw)";
-        quoteCard.style.transform = "translateX(100vw)";
+        // quoteCard.style.webkitTransform = "translateX(100vw)";
+        // quoteCard.style.transform = "translateX(100vw)";
+        quoteCard.className = "quote-card box-shadow new";
         window.setTimeout(function() {
            quoteCard.style.webkitTransform = "translateX(0)";
            quoteCard.style.transform = "translateX(0)";
-        }, 50); // used to enable transisition reset
+        }, 1000); // used to enable transisition reset
     }
 }
 
