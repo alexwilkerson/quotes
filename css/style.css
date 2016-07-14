@@ -59,8 +59,8 @@ body {
 }
 
 .new {
-  -webkit-transform: translateX(101%);
-  transform: translateX(101%);
+  -webkit-transform: translateX(100vw);
+  transform: translateX(100vw);
 }
 
 .deleting {
@@ -129,11 +129,6 @@ blockquote {
 
   .center {
     padding: 0 2.5vw;
-  }
-
-  .new {
-    -webkit-transform: translateX(100vw);
-    transform: translateX(100vw);
   }
 
 }
