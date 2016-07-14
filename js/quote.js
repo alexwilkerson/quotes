@@ -47,7 +47,7 @@ var randomQuote = function(event) {
         window.setTimeout(function() {
            quoteCard.style.webkitTransform = "translateX(0)";
            quoteCard.style.transform = "translateX(0)";
-        }, 90); // used to enable transisition reset
+        }, 50); // used to enable transisition reset
     }
 }
 

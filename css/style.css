@@ -51,9 +51,9 @@ body {
   text-align: center;
   position: relative;
   z-index: 1000;
-  top: 100px;
-  transition: transform 0.6s, background 0.17s, left 0.8s ease-out;
-  -webkit-transition: transform 0.6s, background 0.17s, left 0.8s ease-out;
+  top: 180px;
+  transition: transform 0.8s, background 0.17s, left 0.8s ease-out;
+  -webkit-transition: transform 0.8s, background 0.17s, left 0.8s ease-out;
   -webkit-transform-style: preserve-3d; /* fix for mobile flashing */
   -webkit-backface-visibility: hidden;
   padding-bottom: 20px;
@@ -62,10 +62,6 @@ body {
 .new {
   -webkit-transform: translateX(100vw);
   transform: translateX(100vw);
-}
-
-.deleting {
-  left: 200px;
 }
 
 .quote-card:hover, .quote-card:focus {
