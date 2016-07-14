@@ -41,6 +41,10 @@ body {
   background: #fff;
 }
 
+.center {
+  position: relative;
+}
+
 .quote-card {
   position: relative;
   width: 95%; 
