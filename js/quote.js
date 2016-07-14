@@ -18,6 +18,7 @@ var randomQuote = function(event) {
 
 var moveLeft = function() {
     quoteCard.addEventListener("transitionend", randomQuote, false);
+    quoteCard.style.webkitTransform = "translateX(-100vw)";
     quoteCard.style.transform = "translateX(-100vw)";
 }
 
