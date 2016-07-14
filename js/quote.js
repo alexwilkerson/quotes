@@ -53,3 +53,4 @@ function createNewCard() {
 }
 
 quoteCard.onclick = moveLeft;
+document.getElementById("twitter").onclick.stopPropagation();
