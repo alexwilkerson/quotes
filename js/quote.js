@@ -18,13 +18,15 @@ var randomQuote = function() {
     quoteCard.className = "quote-card box-shadow";
 }*/
 
-var randomQuote = function() {
-    console.log("randomQuote called");
-    var parentOfCard = quoteCard.parentNode;
-    parentOfCard.removeChild(quoteCard);
-    quoteCard = createNewCard();
-    parentOfCard.appendChild(quoteCard);
-    quoteCard.className = "quote-card box-shadow";
+var randomQuote = function(event) {
+    if (event.propertyName==="left"){
+        console.log("randomQuote called");
+        var parentOfCard = quoteCard.parentNode;
+        parentOfCard.removeChild(quoteCard);
+        quoteCard = createNewCard();
+        parentOfCard.appendChild(quoteCard);
+        quoteCard.className = "quote-card box-shadow";
+    }
 }
 
 var moveLeft = function() {
@@ -43,12 +45,8 @@ function createNewCard() {
     newCard.id = "quote-card";
     newCard.className = "quote-card box-shadow new";
     newCard.onclick = moveLeft;
-    newCard.addEventListener("transitionend", function(event) {
-        if (event.propertyName === "left"){
-            randomQuote();
-        }
-    });
-    
+    newCard.addEventListener("transitionend", randomQuote, false);
+
     quote.innerText = "this is all a test";
 
     author.className = "quote-author";
@@ -69,8 +67,4 @@ function createNewCard() {
     // move new firue on screen
 
 quoteCard.onclick = moveLeft;
-quoteCard.addEventListener("transitionend", function(event) {
-    if (event.propertyName === "left"){
-        randomQuote();
-    }
-});
+quoteCard.addEventListener("transitionend", randomQuote, false);
