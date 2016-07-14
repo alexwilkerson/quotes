@@ -43,7 +43,7 @@ body {
 
 .quote-card {
   position: relative;
-  width: 95vw;
+  width: 95%; 
   padding: 5px;
   margin: 0 auto;
   min-height: 200px;
@@ -59,8 +59,8 @@ body {
 }
 
 .new {
-  -webkit-transform: translateX(100vw);
-  transform: translateX(100vw);
+  -webkit-transform: translateX(200vw);
+  transform: translateX(200vw);
 }
 
 .deleting {
