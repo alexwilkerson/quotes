@@ -59,8 +59,8 @@ body {
 }
 
 .new {
-  -webkit-transform: translateX(110%);
-  transform: translateX(110%);
+  -webkit-transform: translateX(101%);
+  transform: translateX(101%);
 }
 
 .deleting {
