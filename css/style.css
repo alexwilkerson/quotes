@@ -45,6 +45,7 @@ body {
   position: relative;
   width: 100%;
   padding: 5px;
+  margin: 0 auto;
   min-height: 200px;
   background: #f67944;
   border-radius: 6px;
@@ -124,7 +125,6 @@ blockquote {
 @media (min-width: 399px) {
   .quote-card {
     max-width: 400px;
-    margin: 0 auto;
   }
 }
 
@@ -146,8 +146,10 @@ blockquote {
   visibility: hidden;
 }
 
+/* DEBUG
+
 * {
   background: #000 !important;
   color: #0f0 !important;
   outline: solid #f00 1px !important;
-}
+} */
