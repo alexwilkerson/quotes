@@ -1,5 +1,36 @@
-var colors;
-var quotes;
+var colors = [ "#de3d83", "#f54123", "#e4bd0b", "#6e7f29", "#2677bb", "#f77e5e",
+               "#37bbe4", "#fe9f97", "#635045", "#b7c7bd"];
+var quotes = [ 
+                "Accept everything just the way it is.",
+                "Do not seek pleasure for its own sake.",
+                "Do not give preference to anything among all things.",
+                "Think lightly of yourself and deeply of the world.",
+                "Be detached from desire your whole life.",
+                "Do not regret what you have done.",
+                "Never be jealous.",
+                "Never let yourself be saddened by a separation.",
+                "Resentment and complaint are appropriate neither for oneself nor others.",
+                "Do not let yourself be guided by the feeling of lust or love.",
+                "Do not seek elegance and beauty in all things.",
+                "Be indifferent to where you live.",
+                "Do not pursue the taste of good food.",
+                "Do not hold on to possessions you no longer need.",
+                "Do not act following customary beliefs.",
+                "Do not collect weapons or practice with weapons beyond what is useful.",
+                "Do not fear death.",
+                "Do not seek to possess either goods or fiefs for your old age.",
+                "Respect Buddha and the gods without counting on their help.",
+                "You may abandon your own body but you must preserve your honor.",
+                "Never stray from the way."
+              ];
+
+var randomColor = function() {
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+var randomQuoteString = function() {
+    return quotes[Math.floor(Math.random() * quotes.length)];
+}
 
 var quoteCard = document.getElementById("quote-card");
 
@@ -12,6 +43,7 @@ var randomQuote = function(event) {
         // quoteCard.style.webkitTransform = "translateX(100vw)";
         // quoteCard.style.transform = "translateX(100vw)";
         quoteCard.className = "quote-card box-shadow new";
+        quoteCard.style.background = randomColor();
         window.setTimeout(function() {
            quoteCard.style.webkitTransform = "translateX(0)";
            quoteCard.style.transform = "translateX(0)";
@@ -38,12 +70,18 @@ function createNewCard() {
     newCard.className = "quote-card box-shadow";
     newCard.onclick = moveLeft;
 
-    quote.innerText = "this is all a test";
+    var randQuote = randomQuoteString();
+    quote.innerText = randQuote;
 
     author.className = "quote-author";
+    author.innerHTML = "&mdash; Miyamoto Musashi";
 
     twitter.innerHTML = "<i class=\"fa fa-twitter twitter-logo text-shadow\"></i>";
-    twitter.href = "#";
+    twitter.href = encodeURI("https://twitter.com/intent/tweet?text=\"" + randQuote + "\" -Miyamoto Musashi");
+    twitter.id = "twitter";
+    twitter.onclick = function(event) {
+        event.stopPropagation(); // prevents parent from being clicked
+    }
 
     newCard.appendChild(quote);
     newCard.appendChild(author);
@@ -52,5 +90,14 @@ function createNewCard() {
     return newCard;
 }
 
+var initialRandomQuote = randomQuoteString();
+document.getElementsByTagName("blockquote")[0].innerHTML = initialRandomQuote;
+quoteCard.style.background = randomColor();
+document.getElementById("twitter").href = encodeURI("https://twitter.com/intent/tweet?text=\"" + initialRandomQuote + "\" -Miyamoto Musashi");
+
+
 quoteCard.onclick = moveLeft;
-document.getElementById("twitter").onclick.stopPropagation();
+document.getElementById("twitter").onclick = function(event) {
+    event.stopPropagation();
+}
+console.log(randomColor());
