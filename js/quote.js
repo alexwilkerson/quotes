@@ -56,6 +56,7 @@ var randomQuote = function(event) {
 
 var moveLeft = function() {
     quoteCard.addEventListener("transitionend", randomQuote, false);
+    walking.style.color = "#000";
     quoteCard.style.webkitTransform = "translateX(-100vw)";
     quoteCard.style.transform = "translateX(-100vw)";
 }
