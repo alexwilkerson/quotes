@@ -39,6 +39,7 @@ body {
   font-weight: 500;
   line-height: 1.6em;
   background: #fff;
+  color: #444;
 }
 
 header {
@@ -74,6 +75,7 @@ h1 {
   -webkit-transform-style: preserve-3d; /* fix for mobile flashing */
   -webkit-backface-visibility: hidden;
   padding-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .new {
@@ -131,6 +133,26 @@ blockquote {
   transform: scale(1.2);
 }
 
+footer {
+  background: #444;
+  color: #fff;
+  display: block; 
+  z-index: 9999;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#heart {
+   -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
 
 /* ================================= 
   Media Queries

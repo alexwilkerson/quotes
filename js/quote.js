@@ -34,6 +34,7 @@ var randomQuoteString = function() {
 
 var quoteCard = document.getElementById("quote-card");
 var walking = document.getElementById("walking");
+var heart = document.getElementById("heart");
 
 var randomQuote = function(event) {
     if (event.propertyName==="transform"){
@@ -47,6 +48,7 @@ var randomQuote = function(event) {
         var randColor = randomColor();
         quoteCard.style.background = randColor;
         walking.style.color = randColor;
+        heart.style.color = randColor;
         window.setTimeout(function() {
            quoteCard.style.webkitTransform = "translateX(0)";
            quoteCard.style.transform = "translateX(0)";
@@ -56,7 +58,7 @@ var randomQuote = function(event) {
 
 var moveLeft = function() {
     quoteCard.addEventListener("transitionend", randomQuote, false);
-    walking.style.color = "#000";
+    walking.style.color = "#444";
     quoteCard.style.webkitTransform = "translateX(-100vw)";
     quoteCard.style.transform = "translateX(-100vw)";
 }
@@ -100,6 +102,7 @@ var initialRandomColor = randomColor();
 quoteCard.style.background = initialRandomColor;
 document.getElementById("twitter").href = encodeURI("https://twitter.com/intent/tweet?text=\"" + initialRandomQuote + "\" -Miyamoto Musashi");
 walking.style.color = initialRandomColor; 
+heart.style.color = initialRandomColor;
 
 
 quoteCard.onclick = moveLeft;
