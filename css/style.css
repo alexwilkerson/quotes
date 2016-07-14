@@ -59,8 +59,8 @@ body {
 }
 
 .new {
-  -webkit-transform: translateX(99vw);
-  transform: translateX(99vw);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
 }
 
 .deleting {
@@ -125,6 +125,10 @@ blockquote {
 @media (min-width: 399px) {
   .quote-card {
     max-width: 400px;
+  }
+
+  .center {
+    padding: 0 2.5vw;
   }
 }
 
