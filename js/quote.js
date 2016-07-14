@@ -3,17 +3,32 @@ var quotes;
 
 var quoteCard = document.getElementById("quote-card");
 
-
+    /*
 var randomQuote = function() {
     console.log("random quote");
+    var parentofCard = quoteCard.parentNode;
     quoteCard.className = "quote-card box-shadow deleting";
-    setTimeout(function() {
-        var parentOfCard = quoteCard.parentNode;
-        parentOfCard.removeChild(quoteCard);
-        var newCard = createNewCard();
-        parentOfCard.appendChild(newCard);
-        newCard.onclick = randomQuote;
-    }, 400);
+    quoteCard = createNewCard();
+    document.getElementById("center").appendChild(quoteCard);
+    quoteCard.className = "quote-card box-shadow";
+    quoteCard = createNewCard();
+    quoteCard.onclick = randomQuote;
+    quoteCard.className = "quote-card box-shadow new";
+    quoteCard.parentNode.appendChild(quoteCard);
+    quoteCard.className = "quote-card box-shadow";
+}*/
+
+var randomQuote = function() {
+    console.log("randomQuote called");
+    var parentOfCard = quoteCard.parentNode;
+    parentOfCard.removeChild(quoteCard);
+    quoteCard = createNewCard();
+    parentOfCard.appendChild(quoteCard);
+    quoteCard.className = "quote-card box-shadow";
+}
+
+var moveLeft = function() {
+    quoteCard.className = "quote-card box-shadow deleting";
 }
 
 function createNewCard() {
@@ -26,8 +41,13 @@ function createNewCard() {
     var twitter = document.createElement("a");
 
     newCard.id = "quote-card";
-    newCard.className = "quote-card box-shadow";
-    newCard.style.color = "blue";
+    newCard.className = "quote-card box-shadow new";
+    newCard.onclick = moveLeft;
+    newCard.addEventListener("transitionend", function(event) {
+        if (event.propertyName === "left"){
+            randomQuote();
+        }
+    });
     
     quote.innerText = "this is all a test";
 
@@ -48,4 +68,9 @@ function createNewCard() {
     // add figure with random quote, and random color
     // move new firue on screen
 
-quoteCard.onclick = randomQuote;
+quoteCard.onclick = moveLeft;
+quoteCard.addEventListener("transitionend", function(event) {
+    if (event.propertyName === "left"){
+        randomQuote();
+    }
+});

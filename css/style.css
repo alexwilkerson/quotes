@@ -64,7 +64,7 @@ body {
 }
 
 .deleting {
-  left: -100vw;
+  left: -100%;
 }
 
 .quote-card:hover, .quote-card:focus {
@@ -123,17 +123,12 @@ blockquote {
 
 @media (min-width: 399px) {
   .quote-card {
-    width: 400px;
+    max-width: 400px;
     margin: 0 auto;
   }
 }
 
 @media (min-width: 769px) {
-
-  .center {
-    width: 770px;
-    margin: 0 auto;
-  }
 
 }
 
