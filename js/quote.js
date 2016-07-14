@@ -4,20 +4,21 @@ var quotes;
 var quoteCard = document.getElementById("quote-card");
 
 var randomQuote = function(event) {
-    if (event.propertyName==="left"){
+    if (event.propertyName==="transform"){
         var parentOfCard = quoteCard.parentNode;
         parentOfCard.removeChild(quoteCard);
         quoteCard = createNewCard();
         parentOfCard.appendChild(quoteCard);
+        quoteCard.style.transform = "translateX(100vw)";
         window.setTimeout(function() {
-            quoteCard.className = "quote-card box-shadow";
+            quoteCard.style.transform = "translateX(0)";
         }, 50); // used to enable transisition reset
     }
 }
 
 var moveLeft = function() {
     quoteCard.addEventListener("transitionend", randomQuote, false);
-    quoteCard.className = "quote-card box-shadow deleting";
+    quoteCard.style.transform = "translateX(-100vw)";
 }
 
 function createNewCard() {
@@ -30,7 +31,7 @@ function createNewCard() {
     var twitter = document.createElement("a");
 
     newCard.id = "quote-card";
-    newCard.className = "quote-card box-shadow new";
+    newCard.className = "quote-card box-shadow";
     newCard.onclick = moveLeft;
 
     quote.innerText = "this is all a test";
