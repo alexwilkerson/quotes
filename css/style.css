@@ -137,8 +137,9 @@ footer {
   display: block; 
   z-index: 9999;
   width: 100%;
-  position: absolute;
   bottom: 0;
+  right: 0;
+  position: fixed;
   text-align: center;
   -webkit-transition: 0.8s;
   transition: 0.8s;
