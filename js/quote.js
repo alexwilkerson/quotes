@@ -43,7 +43,7 @@ var randomQuote = function(event) {
         footer.style.position = "absolute";
         window.setTimeout(function() {
             footer.style.position = "fixed";
-        }, 800);
+        }, 600);
         parentOfCard.removeChild(quoteCard);
         quoteCard = createNewCard();
         parentOfCard.appendChild(quoteCard);
