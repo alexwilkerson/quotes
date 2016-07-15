@@ -35,15 +35,10 @@ var randomQuoteString = function() {
 var quoteCard = document.getElementById("quote-card");
 var walking = document.getElementById("walking");
 var heart = document.getElementById("heart");
-var footer = document.getElementsByTagName("footer")[0];
 
 var randomQuote = function(event) {
     if (event.propertyName==="transform"){
         var parentOfCard = quoteCard.parentNode;
-        footer.style.position = "absolute";
-        window.setTimeout(function() {
-            footer.style.position = "fixed";
-        }, 600);
         parentOfCard.removeChild(quoteCard);
         quoteCard = createNewCard();
         parentOfCard.appendChild(quoteCard);
