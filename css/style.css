@@ -142,6 +142,9 @@ footer {
   position: fixed;
   bottom: 0;
   text-align: center;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+
 }
 
 footer a {
